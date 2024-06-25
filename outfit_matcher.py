@@ -11,6 +11,13 @@ class OutfitMatcher:
         self.model = OutfitModel()
         self.weather_api = WeatherCityInfo()
 
+    def match(self, weather_func, *args):
+        return self.model.predict(
+            clothes=matcher.dataset.to_json(),
+            outfit=matcher.dataset.previous_outfit,
+            weather=weather_func(*args),
+        )
+
     def start(self):
         while True:
             command = input("Enter a command (now, today, YYYY-MM-DD, exit):\n")
@@ -18,31 +25,13 @@ class OutfitMatcher:
                 print("Exiting...")
                 break
             elif command == "now":
-                prediction = self.model.predict(
-                    prompt="Help me to choose proper clothes by color comfortouble for current weather",
-                    clothes=matcher.dataset.to_json(),
-                    outfit=matcher.dataset.previous_outfit,
-                    weather=matcher.weather_api.get_current_weather(),
-                )
-                print(prediction)
+                print(self.match(self.weather_api.get_current_weather))
             elif command == "today":
-                prediction = self.model.predict(
-                    prompt="Help me to choose proper clothes by color comfortouble for current weather",
-                    clothes=matcher.dataset.to_json(),
-                    outfit=matcher.dataset.previous_outfit,
-                    weather=matcher.weather_api.get_today_forecast(),
-                )
-                print(prediction)
+                print(self.match(self.weather_api.get_today_forecast))
             else:
                 try:
                     datetime.strptime(command, "%Y-%m-%d")
-                    prediction = self.model.predict(
-                        prompt="Help me to choose proper clothes by color comfortouble for current weather",
-                        clothes=matcher.dataset.to_json(),
-                        outfit=matcher.dataset.previous_outfit,
-                        weather=matcher.weather_api.get_day_forecast(command),
-                    )
-                    print(prediction)
+                    print(self.match(self.weather_api.get_day_forecast, command))
                 except ValueError:
                     print("Wrong command")
 

@@ -1,5 +1,6 @@
 from copy import deepcopy
 
+from g4f import Provider
 from g4f.client import Client
 
 
@@ -13,19 +14,17 @@ class OutfitModel:
             },
             {
                 "role": "user",
-                "content": "Clothes JSON:\n{}\nWeather JSON:\n{}\nPrevious outfit:\n{}\nPrompt:\n{} Write only suggested outfit and color coordination explanation. Do not repeat fully previous outfit. Use names from clothes JSON",
+                "content": "Write briefly in english base weather information, new outfit suggestion and color matching explanation based on clothes JSON, weather JSON, previous outfit provided below:\nClothes JSON:\n{}\nWeather JSON:\n{}\nPrevious outfit:\n{}",
             },
         ]
 
-    def predict(self, prompt, clothes, weather, outfit):
+    def predict(self, clothes, weather, outfit):
         messages = deepcopy(self.messages)
         messages[-1]["content"] = self.messages[-1]["content"].format(
-            clothes, weather, outfit, prompt
+            clothes, weather, outfit
         )
         response = self.client.chat.completions.create(
-            # model="gpt-4o"
-            model="gpt-3.5-turbo",
-            messages=messages,
+            model="gpt-3.5-turbo", messages=messages
         )
         return response.choices[0].message.content
 
@@ -37,7 +36,6 @@ class OutfitModel:
             }
         ]
         response = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=messages,
+            model="gpt-3.5-turbo", messages=messages
         )
         return response.choices[0].message.content
