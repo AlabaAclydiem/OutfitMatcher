@@ -1,42 +1,14 @@
-Name,Primary Color,Description
-Skirt A,Blue,A-line blue skirt with pockets.
-Shirt B,White,Classic white shirt with button-down collar.
-Dress C,Red,Elegant red dress with lace detailing.
-Jacket D,Black,Fitted black jacket with zip closure.
-Pants E,Grey,Comfortable grey pants with adjustable waist.
-Blouse F,Green,Flowy green blouse with ruffles.
-Scarf G,Purple,Luxurious purple scarf with fringe.
-Trousers H,Beige,Slim-fit beige trousers with side pockets.
-Coat I,Brown,Warm brown coat with fur trim.
-Socks J,Pink,Soft pink socks with stripes.
-Skirt K,Yellow,Sunny yellow skirt with elastic waistband.
-Shirt L,Navy,Smart navy shirt with hidden buttons.
-Dress M,Teal,Chic teal dress with pleats.
-Jacket N,Olive,Casual olive jacket with patch pockets.
-Pants O,Maroon,Stretch maroon pants with cargo pockets.
-Blouse P,Lavender,Delicate lavender blouse with lace sleeves.
-Scarf Q,Turquoise,Vibrant turquoise scarf with tassels.
-Trousers R,Khaki,Tailored khaki trousers with belt loops.
-Coat S,Plum,Plush plum coat with faux fur hood.
-Socks T,Sky Blue,Cozy sky blue socks with argyle pattern.
-Skirt U,Coral,Flirty coral skirt with ruching.
-Shirt V,Silver,Sleek silver shirt with mandarin collar.
-Dress W,Lime,Playful lime dress with tiered skirt.
-Jacket X,Burgundy,Formal burgundy jacket with velvet lapel.
-Pants Y,Denim,Classic denim pants with contrast stitching.
-Blouse Z,Peach,Soft peach blouse with bell sleeves.
-Scarf AA,Emerald,Elegant emerald scarf with silk lining.
-Trousers AB,Charcoal,Slim-fit charcoal trousers with welt pockets.
-Coat AC,Mustard,Stylish mustard coat with leather details.
-Socks AD,Royal Blue,Sporty royal blue socks with logos.
-Skirt AE,Fuchsia,Feminine fuchsia skirt with flounce.
-Shirt AF,Taupe,Timeless taupe shirt with French cuffs.
-Dress AG,Cobalt,Bold cobalt dress with asymmetrical hem.
-Jacket AH,Sage,Casual sage jacket with epaulettes.
-Pants AI,Petrol,Comfortable petrol pants with stretch fabric.
-Blouse AJ,Mint,Fresh mint blouse with pleated front.
-Scarf AK,Salmon,Luxurious salmon scarf with satin edges.
-Trousers AL,Camel,Versatile camel trousers with cuff.
-Coat AM,Aubergine,Elegant aubergine coat with satin finish.
-Socks AN,Lilac,Elegant lilac socks with floral embroidery.
-
+Name,Category,Primary Color,Material,Description
+Blazer,Upperwear,Light Green,Satin,Light cool blazer
+Sweater,Upperwear,Light Yellow,Wool,Warm knitted sweater with buttons
+Jacket,Upperwear,Gray,Polyester,Light windbreaker with a black emblem on the chest
+Jacket,Upperwear,Black,Polyester,Light windbreaker with thin red stripes
+Skirt,Legs,Beige,Satin,Light pencil skirt
+Skirt,Legs,Black,Cotton,Thick dark skirt
+Tank Top,Body,Light Beige,Cotton,Sleeveless tank top with floral patterns in dull blue and green tones
+Jeans,Legs,Light Blue,Denim,Medium thickness flared jeans
+Jeans,Legs,Light Blue,Denim,Thick jeans
+Tank Top,Body,White,Polyester,Thick tank top with brown and black print
+Tank Top,Body,Burgundy,Cotton,Sleeveless tank top
+Tank Top,Body,Black,Cotton,Light tank top
+Tank Top,Body,Dark Beige,Cotton,Sleeveless tank top

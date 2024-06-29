@@ -14,7 +14,7 @@ class OutfitMatcher:
     def match(self, weather_func, *args):
         return self.model.predict(
             clothes=matcher.dataset.to_json(),
-            outfit=matcher.dataset.previous_outfit,
+            outfit=matcher.dataset.get_outfit(),
             weather=weather_func(*args),
         )
 
@@ -25,13 +25,19 @@ class OutfitMatcher:
                 print("Exiting...")
                 break
             elif command == "now":
-                print(self.match(self.weather_api.get_current_weather))
+                outfit = self.match(self.weather_api.get_current_weather)
+                print(outfit)
+                self.dataset.save_outfit(self.model.extract_outfit(outfit))
             elif command == "today":
-                print(self.match(self.weather_api.get_today_forecast))
+                outfit = self.match(self.weather_api.get_today_forecast)
+                print(outfit)
+                self.dataset.save_outfit(self.model.extract_outfit(outfit))
             else:
                 try:
                     datetime.strptime(command, "%Y-%m-%d")
-                    print(self.match(self.weather_api.get_day_forecast, command))
+                    outfit = self.match(self.weather_api.get_day_forecast, command)
+                    print(outfit)
+                    self.dataset.save_outfit(self.model.extract_outfit(outfit))
                 except ValueError:
                     print("Wrong command")
 
