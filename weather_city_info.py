@@ -23,7 +23,9 @@ class WeatherCityInfo:
         else:
             self.preferred_hours = (self.preferred_hours[0], self.preferred_hours[1])
         if self.preferred_hours[0] < 0 or self.preferred_hours[1] > 23:
-            raise ValueError('Incorret day hours')
+            self.preferred_hours = (9, 20)
+            raise ValueError(f'Incorret day hours. Hours are set to default {self.preferred_hours}')
+            
             
     def _set_city_coordinates(self):
         url = CITY_LATLONG_URL.format(self.city)
